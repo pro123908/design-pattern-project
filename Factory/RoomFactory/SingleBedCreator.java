@@ -1,7 +1,6 @@
 package Factory.RoomFactory;
 
-import Factory.Room.Room;
-import Factory.Room.SingleBedRoom;
+import Room.*;
 
 public class SingleBedCreator extends RoomCreator {
 

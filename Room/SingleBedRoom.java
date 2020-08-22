@@ -1,4 +1,4 @@
-package Factory.Room;
+package Room;
 
 public class SingleBedRoom implements Room {
 

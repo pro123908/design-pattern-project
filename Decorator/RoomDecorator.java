@@ -1,5 +1,7 @@
 package Decorator;
 
+import Room.*;
+
 abstract class RoomDecorator implements Room {
     protected Room tempRoom;
 

@@ -1,5 +1,7 @@
 package Decorator;
 
+import Room.*;
+
 public class ConcreteRoom implements Room {
     public double getCost() {
         System.out.println("Cost of Concrete Room: " + 150.0);

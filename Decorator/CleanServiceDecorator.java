@@ -1,5 +1,7 @@
 package Decorator;
 
+import Room.*;
+
 public class CleanServiceDecorator extends RoomDecorator {
     public CleanServiceDecorator(Room newRoom) {
         super(newRoom);

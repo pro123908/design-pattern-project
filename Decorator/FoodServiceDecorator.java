@@ -1,5 +1,7 @@
 package Decorator;
 
+import Room.*;
+
 public class FoodServiceDecorator extends RoomDecorator {
     public FoodServiceDecorator(Room newRoom) {
         super(newRoom);

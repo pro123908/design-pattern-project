@@ -1,6 +1,6 @@
 package Factory;
 
-import Factory.Room.SingleBedRoom;
+import Room.SingleBedRoom;
 import Factory.RoomFactory.*;
 
 public class Factory {

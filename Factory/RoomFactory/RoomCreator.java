@@ -1,6 +1,6 @@
 package Factory.RoomFactory;
 
-import Factory.Room.Room;
+import Room.*;
 
 public abstract class RoomCreator {
 

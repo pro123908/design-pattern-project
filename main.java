@@ -4,11 +4,12 @@
  */
 
 import Facade.*;
-import Factory.Room.Room;
+import Room.*;
 import Factory.RoomFactory.DoubleBedCreator;
 import Factory.RoomFactory.RoomCreator;
 import Factory.RoomFactory.SingleBedCreator;
 import Singleton.Singleton;
+import Decorator.*;
 
 public class main {
 
@@ -31,10 +32,11 @@ public class main {
             roomCreator = new DoubleBedCreator();
         }
 
-        Room newRoom = roomCreator.getRoom();
-        newRoom.getCost();
-        newRoom.getRoomDescription();
-        newRoom.getRoomType();
+        Room decoratedRoom = new CleanServiceDecorator(new FoodServiceDecorator((roomCreator.getRoom())));
+
+        decoratedRoom.getCost();
+        decoratedRoom.getRoomDescription();
+        decoratedRoom.getRoomType();
     }
 
     public static void handlePayment() {
