@@ -1,4 +1,4 @@
-package Room;
+package Decorator;
 
 public interface Room {
     public double getCost();
@@ -6,6 +6,4 @@ public interface Room {
     public String getRoomDescription();
 
     public String getRoomType();
-
-    public String getRoomNumber();
 }
