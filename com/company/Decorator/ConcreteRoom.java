@@ -1,6 +1,6 @@
-package Decorator;
+package com.company.Decorator;
 
-import Room.*;
+import com.company.Room.*;
 
 public class ConcreteRoom implements Room {
     public double getCost() {

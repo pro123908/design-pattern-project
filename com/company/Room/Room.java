@@ -1,4 +1,4 @@
-package Room;
+package com.company.Room;
 
 public interface Room {
     public double getCost();

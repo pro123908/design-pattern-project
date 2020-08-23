@@ -1,6 +1,6 @@
-package Factory.RoomFactory;
+package com.company.Factory.RoomFactory;
 
-import Room.*;
+import com.company.Room.*;
 
 public class DoubleBedCreator extends RoomCreator {
 

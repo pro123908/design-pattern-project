@@ -1,6 +1,6 @@
-package Decorator;
+package com.company.Decorator;
 
-import Room.*;
+import com.company.Room.*;
 
 abstract class RoomDecorator implements Room {
     protected Room tempRoom;

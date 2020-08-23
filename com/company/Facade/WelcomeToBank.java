@@ -1,5 +1,5 @@
 
-package Facade;
+package com.company.Facade;
 
 public class WelcomeToBank {
 

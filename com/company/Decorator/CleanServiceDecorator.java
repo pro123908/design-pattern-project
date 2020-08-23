@@ -1,6 +1,6 @@
-package Decorator;
+package com.company.Decorator;
 
-import Room.*;
+import com.company.Room.*;
 
 public class CleanServiceDecorator extends RoomDecorator {
     public CleanServiceDecorator(Room newRoom) {
@@ -9,7 +9,7 @@ public class CleanServiceDecorator extends RoomDecorator {
     }
 
     public String getRoomDescription() {
-        return tempRoom.getRoomDescription() + "and additional special cleaning Service Added!";
+        return tempRoom.getRoomDescription() + "\n-> Additional Special Cleaning Service";
     }
 
     public double getCost() {

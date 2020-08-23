@@ -3,7 +3,7 @@
 
 // The Facades aim is to simplify interfaces so you don't have 
 // to worry about what is going on under the hood
-package Facade;
+package com.company.Facade;
 
 public class PaymentFacade {
 
@@ -18,7 +18,7 @@ public class PaymentFacade {
 
     public PaymentFacade() {
 
-        bankWelcome = new WelcomeToBank();
+//        bankWelcome = new WelcomeToBank();
 
         acctChecker = new AccountNumberCheck();
         codeChecker = new SecurityCodeCheck();
@@ -57,6 +57,7 @@ public class PaymentFacade {
     public void makePayment(double payment) {
         if (acctChecker.accountActive(getAccountNumber()) && codeChecker.isCodeCorrect(getSecurityCode())) {
 
+            System.out.println("Total Payment : " + payment);
             fundChecker.makeDeposit(payment);
 
             System.out.println("Transaction Complete\n");

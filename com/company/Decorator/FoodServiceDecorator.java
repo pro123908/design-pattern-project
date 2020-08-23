@@ -1,6 +1,6 @@
-package Decorator;
+package com.company.Decorator;
 
-import Room.*;
+import com.company.Room.*;
 
 public class FoodServiceDecorator extends RoomDecorator {
     public FoodServiceDecorator(Room newRoom) {
@@ -9,7 +9,7 @@ public class FoodServiceDecorator extends RoomDecorator {
     }
 
     public String getRoomDescription() {
-        return tempRoom.getRoomDescription() + "and additional special Food Service Added!";
+        return tempRoom.getRoomDescription() + "\n-> Additional Special Food Service";
     }
 
     public double getCost() {

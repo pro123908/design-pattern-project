@@ -1,23 +1,23 @@
-package Room;
+package com.company.Room;
 
-public class SingleBedRoom implements Room {
+public class DoubleBedRoom implements Room {
 
     @Override
     public double getCost() {
 
-        return 50.00;
+        return 100.00;
     }
 
     @Override
     public String getRoomDescription() {
 
-        return "Single Bed... Blah Blah";
+        return "Double Bed with : ";
     }
 
     @Override
     public String getRoomType() {
 
-        return "Single Bed";
+        return "Double Bed";
     }
 
 }

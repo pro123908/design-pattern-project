@@ -1,4 +1,4 @@
-package Facade;
+package com.company.Facade;
 
 public class FundsCheck {
 
@@ -41,7 +41,8 @@ public class FundsCheck {
 
         increaseCashInAccount(cashToDeposit);
 
-        System.out.println("Deposit Complete: Current Balance is " + getCashInAccount());
+//        System.out.println("Deposit Complete: Current Balance is " + getCashInAccount());
+
 
     }
 
