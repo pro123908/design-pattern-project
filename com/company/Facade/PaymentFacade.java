@@ -14,11 +14,7 @@ public class PaymentFacade {
     SecurityCodeCheck codeChecker;
     FundsCheck fundChecker;
 
-    WelcomeToBank bankWelcome;
-
     public PaymentFacade() {
-
-//        bankWelcome = new WelcomeToBank();
 
         acctChecker = new AccountNumberCheck();
         codeChecker = new SecurityCodeCheck();
