@@ -1,6 +1,5 @@
 package com.company;
 
-
 import com.company.Decorator.CleanServiceDecorator;
 import com.company.Decorator.FoodServiceDecorator;
 import com.company.Facade.PaymentFacade;
@@ -8,25 +7,26 @@ import com.company.Factory.RoomFactory.DoubleBedCreator;
 import com.company.Factory.RoomFactory.RoomCreator;
 import com.company.Factory.RoomFactory.SingleBedCreator;
 import com.company.Room.Room;
-import com.company.Singleton.Singleton;
+import com.company.Singleton.Database;
+import com.company.Singleton.DatabaseOperations;
 
 /**
  * main
  */
 
-
-
 public class Main {
 
     private static RoomCreator roomCreator;
     public static double totalAmountToBePaid = 0;
+    private static Database databaseInstance;
+    private static DatabaseOperations databaseOperations;
 
     public static void main(String[] args) {
         System.out.println("\n\n======== Welcome to the Hotel Booking System =========\n");
 
         handleDatabaseConnection();
-      handleRoomCreation(1); // 0 means singleBed, 1 means doubleBed
- handlePayment();
+        handleRoomCreation(1); // 0 means singleBed, 1 means doubleBed
+        handlePayment();
 
     }
 
@@ -39,22 +39,19 @@ public class Main {
             roomCreator = new DoubleBedCreator();
         }
 
-        System.out.println("Room Created : " + roomCreator.getRoom().getRoomType() + " which costs " + roomCreator.getRoom().getCost() );
+        System.out.println("Room Created : " + roomCreator.getRoom().getRoomType() + " which costs "
+                + roomCreator.getRoom().getCost());
 
+        Room decoratedRoom = new CleanServiceDecorator(new FoodServiceDecorator(roomCreator.getRoom()));
 
-        Room decoratedRoom = new CleanServiceDecorator(new FoodServiceDecorator (roomCreator.getRoom()));
-
-
-   System.out.println(decoratedRoom.getRoomDescription());
+        System.out.println(decoratedRoom.getRoomDescription());
         totalAmountToBePaid = decoratedRoom.getCost();
-        System.out.println("Total Cost : "  + totalAmountToBePaid);
-
+        System.out.println("Total Cost : " + totalAmountToBePaid);
 
     }
 
     public static void handlePayment() {
         System.out.println("\n==== Payment ====");
-
 
         PaymentFacade payment = new PaymentFacade();
         payment.setCredentials(12345678, 1234);
@@ -63,11 +60,14 @@ public class Main {
 
     public static void handleDatabaseConnection() {
         System.out.println("==== Database Setup ====");
-        Singleton databaseSingletonInstance = Singleton.getInstance("Database_name");
-        if (databaseSingletonInstance != null) {
+        databaseInstance = Database.getInstance("Database_name");
+        databaseOperations = new DatabaseOperations(databaseInstance);
+
+        if (databaseInstance != null) {
             System.out.println("Database Connected");
         } else {
             System.out.println("Database Connection Failed");
         }
     }
+
 }
